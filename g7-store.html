@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071009"><title>G7 STORE | Loja Digital</title>
+<style>
+:root{--bg:#070b08;--panel:#101812;--green:#39ff14;--muted:#b8c5bb;--line:#25452b}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#102516 0,#070b08 55%);color:#f4fff5;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}a{color:inherit}.wrap{width:min(960px,100%);margin:auto;padding:18px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0 22px}.brand{font-weight:1000;font-size:clamp(27px,7vw,40px);letter-spacing:1px;color:var(--green);text-shadow:0 0 18px #39ff1440}.tag{font-size:12px;color:var(--muted);letter-spacing:2px}.pill{border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:12px;color:var(--green)}.hero{border:1px solid #2d6336;border-radius:22px;padding:24px;background:linear-gradient(120deg,#142d19,#0b110d 70%);box-shadow:0 12px 40px #0006}.hero h1{font-size:clamp(26px,6vw,42px);line-height:1.05;margin:0 0 12px}.hero h1 span{color:var(--green)}.hero p{color:var(--muted);line-height:1.6;max-width:570px}.btn{display:inline-flex;justify-content:center;align-items:center;text-decoration:none;border:0;border-radius:11px;background:var(--green);color:#061006;font-weight:900;padding:12px 16px;cursor:pointer;min-height:44px}.btn.secondary{background:#17251a;color:#eaffec;border:1px solid var(--line)}.section-title{margin:28px 0 14px;font-size:20px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.card{border:1px solid var(--line);background:linear-gradient(180deg,#111a13,#0c110e);border-radius:17px;padding:15px;display:flex;flex-direction:column;min-width:0}.art{height:95px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,#1a3b21,#101711);font-size:43px;border:1px solid #28482e}.card h3{margin:14px 0 5px;font-size:17px}.desc{color:var(--muted);font-size:13px;line-height:1.45;min-height:38px}.price{font-size:25px;color:var(--green);font-weight:950;margin:13px 0}.card .btn{width:100%;margin-top:auto}.pay,.help{margin-top:20px;padding:19px;border:1px solid var(--line);border-radius:17px;background:#0d140f}.pay h2,.help h2{margin:0 0 7px}.muted{color:var(--muted);font-size:13px;line-height:1.55}.pixrow{display:flex;gap:8px;margin:13px 0}.pixrow input{flex:1;min-width:0;background:#060a07;border:1px solid #36523b;border-radius:9px;padding:12px;color:#fff}.small{font-size:11px;color:#94a397}.foot{text-align:center;color:#859489;padding:25px 0 10px;font-size:12px}.notice{border-left:3px solid #a8d45b;padding:10px 12px;background:#111a12;color:#cbd7cc;font-size:12px;line-height:1.5;margin-top:15px;border-radius:0 8px 8px 0}.toast{min-height:20px;color:var(--green);font-size:13px}.btn:focus,input:focus{outline:2px solid var(--green);outline-offset:2px}
+@media(max-width:600px){.wrap{padding:14px}.grid{grid-template-columns:1fr 1fr}.card{padding:11px}.art{height:78px}.price{font-size:22px}.top{align-items:flex-start}.pill{white-space:nowrap}.hero{padding:20px 17px}}
+@media(max-width:370px){.grid{grid-template-columns:1fr}}
+</style></head>
+<body><div class="wrap">
+<header class="top"><div><div class="brand">G7 STORE</div><div class="tag">SUA LOJA DIGITAL GAMER</div></div><div class="pill">● ATENDIMENTO ONLINE</div></header>
+<section class="hero"><h1>SEU PRÓXIMO <span>DROP</span><br>COMEÇA AQUI.</h1><p>Confira os produtos digitais disponíveis, veja os preços e fale com a G7 STORE para tirar dúvidas e concluir seu pedido.</p><a class="btn" id="heroContact" href="#ajuda">FALAR COM A LOJA</a></section>
+<h2 class="section-title">🛒 Produtos em destaque</h2><section class="grid" id="products" aria-label="Produtos"></section>
+<section class="pay" id="pix"><h2>▦ Pagamento via Pix</h2><p class="muted">Use a chave abaixo no aplicativo do seu banco. Confira o nome do destinatário e o valor antes de confirmar o pagamento.</p><div class="pixrow"><input id="pixkey" value="jeffersonsilvaalve@gmail.com" readonly aria-label="Chave Pix"><button class="btn" id="copyPix">COPIAR</button></div><div class="toast" id="pixStatus" role="status"></div><p class="small">A chave informada precisa estar cadastrada no banco como chave Pix. Esta loja não confirma pagamentos automaticamente.</p></section>
+<section class="help" id="ajuda"><h2>💬 Precisa de ajuda?</h2><p class="muted">Teve algum problema ou quer perguntar sobre um produto? Fale com a gente pelo WhatsApp ou e-mail.</p><p><a class="btn" id="whatsappHelp" href="#">CHAMAR NO WHATSAPP</a></p><p><a id="emailHelp" href="mailto:jeffersonsilvaalve@gmail.com">jeffersonsilvaalve@gmail.com</a></p></section>
+<div class="notice">Importante: confirme o pagamento diretamente no seu banco antes de entregar qualquer produto. Não compartilhe senhas ou códigos bancários. Use a loja para produtos digitais que você tem direito de vender e que respeitem as regras dos respectivos serviços.</div>
+<footer class="foot">G7 STORE © 2026 · Loja digital independente</footer></div>
+<script>
+// CONFIGURAÇÕES DA LOJA — edite aqui quando quiser.
+const WHATSAPP = '5563423539305'; // país + DDD + número, somente dígitos
+const SUPPORT_EMAIL = 'jeffersonsilvaalve@gmail.com';
+const PIX_KEY = 'jeffersonsilvaalve@gmail.com';
+// Troque os nomes e descrições pelos seus produtos digitais permitidos.
+const PRODUCTS = [
+ {name:'Produto Digital 1',description:'Adicione aqui os detalhes do produto.',price:4.99,icon:'🎮'},
+ {name:'Produto Digital 2',description:'Adicione aqui os detalhes do produto.',price:35,icon:'🔥'},
+ {name:'Produto Digital 3',description:'Adicione aqui os detalhes do produto.',price:50,icon:'💎'}
+];
+const brl=n=>n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const wa=(message)=>'https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent(message);
+document.getElementById('pixkey').value=PIX_KEY;
+document.getElementById('emailHelp').href='mailto:'+SUPPORT_EMAIL;
+document.getElementById('emailHelp').textContent=SUPPORT_EMAIL;
+document.getElementById('whatsappHelp').href=wa('Olá! Preciso de ajuda com a G7 STORE.');
+document.getElementById('heroContact').href=wa('Olá! Vim pela G7 STORE e gostaria de conhecer os produtos.');
+document.getElementById('products').innerHTML=PRODUCTS.map((p,i)=>`<article class="card"><div class="art" aria-hidden="true">${p.icon}</div><h3>${p.name}</h3><div class="desc">${p.description}</div><div class="price">${brl(p.price)}</div><button class="btn" data-buy="${i}">COMPRAR</button></article>`).join('');
+document.querySelectorAll('[data-buy]').forEach(button=>button.addEventListener('click',()=>{const p=PRODUCTS[Number(button.dataset.buy)];window.open(wa(`Olá! Quero comprar ${p.name} por ${brl(p.price)} na G7 STORE. Como posso pagar via Pix?`),'_blank','noopener,noreferrer')}));
+document.getElementById('copyPix').addEventListener('click',async()=>{const status=document.getElementById('pixStatus');try{await navigator.clipboard.writeText(PIX_KEY);status.textContent='Chave Pix copiada! Abra o aplicativo do seu banco.'}catch(e){const input=document.getElementById('pixkey');input.focus();input.select();status.textContent='Selecione e copie a chave Pix.'}});
+</script></body></html>
